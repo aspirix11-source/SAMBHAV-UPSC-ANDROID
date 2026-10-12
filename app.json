@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "SAMBHAV UPSC",
+    "slug": "sambhav-upsc-android",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "android": {
+      "package": "online.sambhavupsc.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#101827"
+      }
+    },
+    "plugins": [
+      "expo-status-bar"
+    ],
+    "extra": {
+      "websiteUrl": "https://sambhavupsc.online"
+    }
+  }
+}
