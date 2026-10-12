@@ -1,0 +1,44 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - android/expo-foundation
+    paths:
+      - "App.js"
+      - "app.json"
+      - "eas.json"
+      - "package.json"
+      - "src/**"
+      - ".github/workflows/android-apk.yml"
+
+jobs:
+  build-apk:
+    name: Build preview APK with EAS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Android repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set up Expo and EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Validate Expo configuration
+        run: npx expo config --type public
+
+      - name: Build installable Android APK
+        run: eas build --platform android --profile preview --non-interactive
