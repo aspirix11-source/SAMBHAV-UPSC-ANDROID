@@ -15,7 +15,7 @@ on:
 
 jobs:
   build-apk:
-    name: Build preview APK with EAS
+    name: Diagnose and build Android APK
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Android repository
@@ -37,6 +37,9 @@ jobs:
 
       - name: Validate Expo configuration
         run: npx expo config --type public
+
+      - name: Diagnose Expo and React Native compatibility
+        run: npx expo-doctor
 
       - name: Build installable Android APK
         run: eas build --platform android --profile preview --non-interactive
