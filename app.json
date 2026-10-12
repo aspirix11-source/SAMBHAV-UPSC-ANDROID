@@ -3,13 +3,13 @@
     "name": "SAMBHAV UPSC",
     "slug": "sambhav-",
     "owner": "sambhavupscs-team",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
     "android": {
       "package": "online.sambhavupsc.app",
-      "versionCode": 2,
+      "versionCode": 3,
       "adaptiveIcon": {
         "backgroundColor": "#101827"
       }
