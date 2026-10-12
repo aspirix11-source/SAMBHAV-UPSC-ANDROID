@@ -15,7 +15,10 @@
       }
     },
     "extra": {
-      "websiteUrl": "https://sambhavupsc.online"
+      "websiteUrl": "https://sambhavupsc.online",
+      "eas": {
+        "projectId": "b0d528ac-5cbf-414e-86db-9f987a9caab8"
+      }
     }
   }
 }
