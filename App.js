@@ -95,18 +95,16 @@ export default function App() {
               }
             }}
             onNavigationStateChange={(state) => setCanGoBack(state.canGoBack)}
+            onFileDownload={({ nativeEvent }) => {
+              const url = nativeEvent?.downloadUrl;
+              if (url) Linking.openURL(url).catch(() => {});
+            }}
             onShouldStartLoadWithRequest={(request) => {
               const url = request.url || "";
               if (url.startsWith("https://") || url.startsWith("http://") || url.startsWith("about:")) return true;
               Linking.openURL(url).catch(() => {});
               return false;
             }}
-            renderLoading={() => (
-              <View style={styles.loadingOverlay}>
-                <ActivityIndicator size="large" color="#D9A441" />
-                <Text style={styles.loadingText}>SAMBHAV UPSC load ho raha hai…</Text>
-              </View>
-            )}
           />
         )}
         {loading && !loadError && (
