@@ -14,9 +14,6 @@
         "backgroundColor": "#101827"
       }
     },
-    "plugins": [
-      "expo-status-bar"
-    ],
     "extra": {
       "websiteUrl": "https://sambhavupsc.online"
     }
